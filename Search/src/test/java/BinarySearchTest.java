@@ -1,7 +1,10 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 class BinarySearchTest {
 
@@ -29,5 +32,59 @@ class BinarySearchTest {
         char[] chars = { 'a', 'z', 'y', 'd'};
         Arrays.sort(chars);
         Assertions.assertEquals(0, BinarySearch.search(chars, 'a'));
+    }
+
+    @Test
+    void searchWithComparator() {
+        final Student tom1 = new Student("Tom", 7.89f);
+        final Student tom2 = new Student("Tom", 9.09f);
+        final Student jerry = new Student("Jerry", 9.49f);
+        List<Student> list = new ArrayList<>();
+        list.add(tom1);
+        list.add(tom2);
+        list.add(jerry);
+
+        final Comparator<Student> comparator = (o1, o2) -> {
+            final int result = Float.compare(o2.getGpa(), o1.getGpa());
+            if (result == 0) {
+                return o2.getName().compareTo(o1.getName());
+            }
+            return result;
+        };
+        list.sort(comparator);
+
+        Assertions.assertEquals(0, BinarySearch.search(list, jerry, comparator));
+        Assertions.assertEquals(1, BinarySearch.search(list, tom2, comparator));
+        Assertions.assertEquals(2, BinarySearch.search(list, tom1, comparator));
+        Assertions.assertEquals(-1, BinarySearch.search(
+                list,
+                new Student("Jerry", 9.7f),
+                comparator));
+        Assertions.assertEquals(-3, BinarySearch.search(
+                list,
+                new Student("Jerry", 8.7f),
+                comparator));
+        Assertions.assertEquals(-4, BinarySearch.search(
+                list,
+                new Student("Mich", 6.7f),
+                comparator));
+    }
+
+    private static class Student {
+        private final String name;
+        private final float gpa;
+
+        public Student(String name, float gpa) {
+            this.name = name;
+            this.gpa = gpa;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public float getGpa() {
+            return gpa;
+        }
     }
 }

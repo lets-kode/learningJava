@@ -1,16 +1,29 @@
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
 public class BinarySearch {
     public static <E extends Comparable<E>> int search(@NotNull List<E> elements, E element) {
+        return search(elements, element, (BiFunction<E, E, Integer>) Comparable::compareTo);
+    }
+
+    public static <E> int search(
+            @NotNull List<E> elements,
+            @NotNull E element,
+            @NotNull Comparator<? super E> comparator) {
+        return search(elements, element, (BiFunction<E, E, Integer>) comparator::compare);
+    }
+
+    private static <E> int search(
+            @NotNull List<E> elements,
+            @NotNull E element,
+            @NotNull BiFunction<E, E, Integer> function) {
         int start = 0, end = elements.size() - 1;
         while (start <= end) {
             final int mid = (start + end) / 2;
-            final int comparisonResult = element.compareTo(elements.get(mid));
+            final int comparisonResult = function.apply(element, elements.get(mid));
             if (comparisonResult == 0) {
                 return mid;
             } else if (comparisonResult > 0) {
