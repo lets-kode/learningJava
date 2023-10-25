@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
-public class BinarySearch {
+public class Search {
     public static <E extends Comparable<E>> int search(@NotNull List<E> elements, E element) {
         return search(elements, element, (BiFunction<E, E, Integer>) Comparable::compareTo);
     }
@@ -45,5 +45,18 @@ public class BinarySearch {
             list.add(c);
         }
         return search(list, value);
+    }
+
+    public static <E extends Comparable<E>> List<E> sortAscendingAndRightShift(@NotNull List<E> list, int shift) {
+        Collections.sort(list);
+        final int theShift = (shift % list.size() + list.size()) % list.size();
+        List<E> resultList = new ArrayList<>();
+        for (int i = list.size() - theShift; i < list.size(); i++) {
+            resultList.add(list.get(i));
+        }
+        for (int i = 0; i < list.size() - theShift; i++) {
+            resultList.add(list.get(i));
+        }
+        return resultList;
     }
 }

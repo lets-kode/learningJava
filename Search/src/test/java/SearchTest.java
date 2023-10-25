@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-class BinarySearchTest {
+class SearchTest {
 
     @org.junit.jupiter.api.Test
     void iterativeSearch() {
@@ -16,22 +16,22 @@ class BinarySearchTest {
     void search() {
         int[] array = {2, 6, 4, 9};
         Arrays.sort(array);
-        Assertions.assertEquals(0, BinarySearch.search(array, 2));
-        Assertions.assertEquals(1, BinarySearch.search(array, 4));
-        Assertions.assertEquals(2, BinarySearch.search(array, 6));
-        Assertions.assertEquals(3, BinarySearch.search(array, 9));
-        Assertions.assertEquals(-1, BinarySearch.search(array, 1));
-        Assertions.assertEquals(-2, BinarySearch.search(array, 3));
-        Assertions.assertEquals(-3, BinarySearch.search(array, 5));
-        Assertions.assertEquals(-4, BinarySearch.search(array, 8));
-        Assertions.assertEquals(-5, BinarySearch.search(array, 12));
+        Assertions.assertEquals(0, Search.search(array, 2));
+        Assertions.assertEquals(1, Search.search(array, 4));
+        Assertions.assertEquals(2, Search.search(array, 6));
+        Assertions.assertEquals(3, Search.search(array, 9));
+        Assertions.assertEquals(-1, Search.search(array, 1));
+        Assertions.assertEquals(-2, Search.search(array, 3));
+        Assertions.assertEquals(-3, Search.search(array, 5));
+        Assertions.assertEquals(-4, Search.search(array, 8));
+        Assertions.assertEquals(-5, Search.search(array, 12));
     }
 
     @Test
     void searchChars() {
         char[] chars = { 'a', 'z', 'y', 'd'};
         Arrays.sort(chars);
-        Assertions.assertEquals(0, BinarySearch.search(chars, 'a'));
+        Assertions.assertEquals(0, Search.search(chars, 'a'));
     }
 
     @Test
@@ -53,18 +53,18 @@ class BinarySearchTest {
         };
         list.sort(comparator);
 
-        Assertions.assertEquals(0, BinarySearch.search(list, jerry, comparator));
-        Assertions.assertEquals(1, BinarySearch.search(list, tom2, comparator));
-        Assertions.assertEquals(2, BinarySearch.search(list, tom1, comparator));
-        Assertions.assertEquals(-1, BinarySearch.search(
+        Assertions.assertEquals(0, Search.search(list, jerry, comparator));
+        Assertions.assertEquals(1, Search.search(list, tom2, comparator));
+        Assertions.assertEquals(2, Search.search(list, tom1, comparator));
+        Assertions.assertEquals(-1, Search.search(
                 list,
                 new Student("Jerry", 9.7f),
                 comparator));
-        Assertions.assertEquals(-3, BinarySearch.search(
+        Assertions.assertEquals(-3, Search.search(
                 list,
                 new Student("Jerry", 8.7f),
                 comparator));
-        Assertions.assertEquals(-4, BinarySearch.search(
+        Assertions.assertEquals(-4, Search.search(
                 list,
                 new Student("Mich", 6.7f),
                 comparator));
