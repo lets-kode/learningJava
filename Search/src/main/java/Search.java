@@ -59,4 +59,26 @@ public class Search {
         }
         return resultList;
     }
+
+    /**
+        returns the index of the minimum element in the given ascending, sorted list of distinct elements
+     */
+    public static <E extends Comparable<E>> int findMinimum(@NotNull List<E> sortedList) {
+        if (sortedList.isEmpty()) {
+            throw new NoSuchElementException("List can't be empty");
+        }
+        int start = 0, end = sortedList.size() - 1;
+        while (start <  end) {
+            final int mid = (start + end) / 2;
+            if (sortedList.get(mid).compareTo(sortedList.get(mid + 1)) > 0) {
+                return mid + 1;
+            }
+            if (sortedList.get(mid).compareTo(sortedList.get(end)) > 0) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return start;
+    }
 }

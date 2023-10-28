@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b160786-4f8a-4e69-84c9-ae62d21611a2" name="Changes" comment="fixed couple of warnings">
+    <list default="true" id="9b160786-4f8a-4e69-84c9-ae62d21611a2" name="Changes" comment="Adding code to short and shift">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Search/src/main/java/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/Search/src/main/java/BinarySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Search/src/main/java/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/Search/src/main/java/Search.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -59,7 +59,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SearchTest">
+  <component name="RunManager" selected="JUnit.SortedShiftedArrayTest">
     <configuration name="ArrayShiftTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Search" />
       <option name="PACKAGE_NAME" value="" />
@@ -69,52 +69,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayShiftTest.sortAndNegativeShift" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Search" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ArrayShiftTest" />
-      <option name="METHOD_NAME" value="sortAndNegativeShift" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArrayShiftTest.sortAndPositiveShift" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Search" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ArrayShiftTest" />
-      <option name="METHOD_NAME" value="sortAndPositiveShift" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArrayShiftTest.sortAndZeroShift" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Search" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ArrayShiftTest" />
-      <option name="METHOD_NAME" value="sortAndZeroShift" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SearchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchTest.searchChars" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Search" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SearchTest" />
+      <option name="METHOD_NAME" value="searchChars" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SortedShiftedArrayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Search" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SortedShiftedArrayTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SortedShiftedArrayTest.findMinimumWithShift" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Search" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SortedShiftedArrayTest" />
+      <option name="METHOD_NAME" value="findMinimumWithShift" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SortedShiftedArrayTest.testCloning" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Search" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SortedShiftedArrayTest" />
+      <option name="METHOD_NAME" value="testCloning" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SearchTest" />
+        <item itemvalue="JUnit.SortedShiftedArrayTest" />
+        <item itemvalue="JUnit.SortedShiftedArrayTest.testCloning" />
+        <item itemvalue="JUnit.SearchTest.searchChars" />
         <item itemvalue="JUnit.ArrayShiftTest" />
-        <item itemvalue="JUnit.ArrayShiftTest.sortAndNegativeShift" />
-        <item itemvalue="JUnit.ArrayShiftTest.sortAndPositiveShift" />
-        <item itemvalue="JUnit.ArrayShiftTest.sortAndZeroShift" />
+        <item itemvalue="JUnit.SortedShiftedArrayTest.findMinimumWithShift" />
       </list>
     </recent_temporary>
   </component>
@@ -141,7 +141,28 @@
       <option name="project" value="LOCAL" />
       <updated>1698030987801</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed couple of warnings">
+      <created>1698198918062</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698198918062</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Adding code to short and shift">
+      <created>1698198978489</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698198978489</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Adding code to short and shift">
+      <created>1698199008660</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698199008660</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +179,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First cut binary search" />
     <MESSAGE value="fixed couple of warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed couple of warnings" />
+    <MESSAGE value="Adding code to short and shift" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding code to short and shift" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LearningJava$ArrayShiftTest.ic" NAME="ArrayShiftTest Coverage Results" MODIFIED="1698205190286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/LearningJava$SearchTest_searchChars.ic" NAME="SearchTest.searchChars Coverage Results" MODIFIED="1698205206237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/LearningJava$SortedShiftedArrayTest.ic" NAME="SortedShiftedArrayTest Coverage Results" MODIFIED="1698205227773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
